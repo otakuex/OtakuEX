@@ -7,6 +7,7 @@ In the last 15 years or so, anime titles have exploaded in numbers due to advanc
 
 __Purpose of this project:__
 - Scrape information about anime series/movies from [Wikipedia](https://en.wikipedia.org/wiki/List_of_anime_companies/), [AniDB.net](http://anidb.net/) (may be a TOS conflict), and other sources to build a DB of all info available and display it in a front end web UI.
+- Expand beyond Anime to include Manga, films, live action series, video games, books, etc.
 - Allow and encourage user ratings on quality and similarity of different titles based on multiple categories (i.e. "this show is like this other in terms of visual style, but more like this other-other one in terms of story and themes").
 - Once there is a well developed rating of similarities, users can see titles of interest from other users of similar likes or demographic profiles.
 
