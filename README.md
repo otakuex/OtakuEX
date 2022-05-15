@@ -22,7 +22,7 @@ __Component/Feature Build Order:__
 - Build additional scraper(s) to pull info from other source(s) such as AniDB.net, MyAnimeList.net, and others where respective ToS' allow.
 - Build basic web UI to display confirmed database listings.
 
->The above I can do; database with a main table of titles and a second of titles that may be the same or unique and waiting for users to decide if they should be merged or becone new titels in the main table. After this point I don't know how to structure the database or even what kind of database to use.
+>The above I can do; database with a main table of titles and a second of titles that may be the same or unique and waiting for users to decide if they should be merged or becone new titles in the main table. After this point I don't know how to structure the database or even what kind of database to use.
 
 - Build feature for web UI that prompts users to rate and sort titles:
 	- Rate how well they know the displayed title.
