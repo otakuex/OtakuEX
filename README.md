@@ -15,3 +15,41 @@ __Additional goals that may be outside this project:__
 - Front page news feed with topics relavent to the Anime Community, like [AnimeNewsNetwork](https://www.animenewsnetwork.com), but smarter with custom feed categories targeting individual user interests, like [Google News](https://news.google.com/).
 - Community forums with auto-promotion of users to mods and admins. Once certain levels are reached, users can elect to complete a site standards and practices course to be allowed to post articles to the front page news stream with content and tone appropriate to the site. These posts will be subject to peer review before going public.
 - Other unidentified benefits to the community (e.g. Gaming voice chat service, list of trusted retailers by region, cosplay general tutorials and discussion like [The PropTarts of Punished Props](https://www.facebook.com/groups/theproptarts/), cosplay photo galleries separated by media type like anime/manga, video game, comic book, etc.).
+
+__Component/Feature Build Order:__
+- Scraper to build local database of anime titles and their respective production companies, staff, cast, etc. Source would be Wikipedia. Scraper must be reliable enough to run daily.
+- Build handling process for new items and changes to existing items found by the scraper. Acceptable to make a widard-like process to have end users manually sort/approve changes and additions where 
+- Build additional scraper(s) to pull info from other source(s) such as AniDB.net, MyAnimeList.net, and others where respective ToS' allow.
+- Build basic web UI to display confirmed database listings.
+
+>The above I can do; database with a main table of titles and a second of titles that may be the same or unique and waiting for users to decide if they should be merged or becone new titels in the main table. After this point I don't know how to structure the database or even what kind of database to use.
+
+- Build feature for web UI that prompts users to rate and sort titles:
+	- Rate how well they know the displayed title.
+	- Pick several titles from a list that they are also familar with.
+	- Rate the similarities of each title on a different-to-same scale fro multiple components (music, visual style, themes, etc.)
+	- Ask user if they want to rate more titles.
+	- Give user point for participating and increase over time with more interaction and dependant on answers being similar to other users'. The participation combined with answer similarity scores will combine into the user's confidence score.
+	- Record the provided answers along with user ID and stated familarity level. The familarity level will be weighted against the user's confidence score. The result, combined with those of other users', will be what determines the final ratings of similarities between the components of titles, and thus of the titles themselves.
+	- Answers should be stored in such a way that it can be sorted to only show only answers from users in the same region, or other user bio criteria, or that speak the same language, or that prefer subs over dubs (i.e. People that like Japanses DragonBall and not the same as people who like Funimation's DragonBall), etc.
+
+>I can't have a title record in a table store info like "this user with this confidence score (changes over time) said this title's music is 70% similar to this other title's music" and then "another user said these other things". Maybe I could make that all it's own table with links to other tables? But some of the info needs to be calculated in real time based on multiple live factors. IDK.
+	
+- Update the basic web UI to include suggestions of overall similar titles and of titles with strongly similar individual components.
+	- Provide display options for results from users with similar liked titles, similar bios, same region, specify different region, etc.
+- Build 2D "Anime World" map where titles are plotted vertically by their maturity level (childish at South Pole, general audience titels along the equator, and mature/intellectual titles at North Pole) and horizontally by their genre (Shonen/action in Eastern Hemisphere, shoujo/romance in the Western hemisphere.
+	- Other genres like slice of life, comedy, horror, etc will have to figure out the appropriate placement.
+	- Some debate is needed on what the main genres should be, leaving others to be only verbally noted rather that being geo-plotted.)
+	- The horizontal plotting will need some logic to connect the far East to the far West edges of the map into a globe (where the anti maridian would be).
+	- Titles should be given land area using a formula similar to: (total viewership % + quality rating %) / Total size of Anime World
+- Add a feature to the map showing users that are currently interacting and what titles they are rating, near real-time.
+
+>This is where it goes completely beyond my experience level and into 3D frameworks like Unity or UnrealEngine.
+
+- Use data sourced to make the 2D map to build a web and mobile compatible 3D globe similar to Google Earth.
+    - The issue map makers have struggled with for centuries will play a part  here; how to show a land mass to the North or South and is the same size as near the equator.
+	- User activity feature would show as satelites orbiting the region of titles they are rating with lines connecting to the land areas of the titles.
+	- Land areas for titles would also have  skyscrapers based on the quality of their components. (e.g. Cweboy Bebop Land would have a skyscraper for Yoko Kanno's music since it's universally accepted as high quality and she has done the music for many other series.)
+	- Additaonal building would include things like libraries, theatres, concert halls, etc. They would include either pop-up menues or a first-person internal environment showing information about the title, currated sample clips on youtube, where to stream videos or music online, etc.
+	- Maybe make connections like roads or suspended highways between the components of different titles, whatever is visually pleasing. Could have littl epeople walking along these paths representing users that have explored new titles based on the similar components in recent weeks/months or over all time. Would be interesting to show the impact the app has made in introducing users to new titles because of the similarities they would otherwise never have known existed.
+
